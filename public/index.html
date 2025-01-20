@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Melissa's Beauty Blog</h1>
+    <nav>
+      <a href="#" id="view-blogs">View Blogs</a>
+      <a href="#" id="sign-up">Sign Up</a>
+      <a href="#" id="log-in">Log In</a>
+      <a href="#" id="create-blog">Create Blog</a>
+    </nav>
+  </header>
+  <main id="content">
+    <section id="blogs">
+      <h2>Published Blogs</h2>
+      <div id="blogs-list"></div>
+    </section>
+    <section id="auth-forms">
+      <!-- Sign Up Form -->
+      <form id="sign-up-form" style="display: none;">
+        <h2>Sign Up</h2>
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" required>
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <!-- Log In Form -->
+      <form id="log-in-form" style="display: none;">
+        <h2>Log In</h2>
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required>
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required>
+        <button type="submit">Log In</button>
+      </form>
+    </section>
+
+    <!-- Create Blog Form -->
+    <form id="create-blog-form" style="display: none;">
+      <h2>Create Blog</h2>
+      <label for="title">Title</label>
+      <input type="text" id="title" required>
+      <label for="description">Description</label>
+      <textarea id="description"></textarea>
+      <label for="body">Body</label>
+      <textarea id="body" required></textarea>
+      <label for="tags">Tags (comma-separated)</label>
+      <input type="text" id="tags">
+      <button type="submit">Create Blog</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 Blogging API</p>
+  </footer>
+  <script>
+    // Simple DOM manipulation to toggle views
+    const blogsSection = document.getElementById("blogs");
+    const signUpForm = document.getElementById("sign-up-form");
+    const logInForm = document.getElementById("log-in-form");
+    const createBlogForm = document.getElementById("create-blog-form");
+
+    document.getElementById("view-blogs").addEventListener("click", () => {
+      blogsSection.style.display = "block";
+      signUpForm.style.display = "none";
+      logInForm.style.display = "none";
+      createBlogForm.style.display = "none";
+    });
+
+    document.getElementById("sign-up").addEventListener("click", () => {
+      signUpForm.style.display = "block";
+      blogsSection.style.display = "none";
+      logInForm.style.display = "none";
+      createBlogForm.style.display = "none";
+    });
+
+    document.getElementById("log-in").addEventListener("click", () => {
+      logInForm.style.display = "block";
+      blogsSection.style.display = "none";
+      signUpForm.style.display = "none";
+      createBlogForm.style.display = "none";
+    });
+
+    document.getElementById("create-blog").addEventListener("click", () => {
+      createBlogForm.style.display = "block";
+      blogsSection.style.display = "none";
+      signUpForm.style.display = "none";
+      logInForm.style.display = "none";
+    });
+  </script>
+   <section class="flex-container">
+    <div class="flex-wrap-one">
+        <h1>Innovating the Future: Explore the Latest in Technology and Development</h1>
+
+        <p>Explore the latest beauty trends and reviews on your favourite beauty brands.</p>
+    </div>
+</section>
+</body>
+</html>
