@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 connectMongoDB(); 
 app.use('/api/auth', authRoutes);
 app.use('/api/blogs', blogRoutes);
-
+app.use(express.static(path.join(__dirname, 'public')));
 const PORT = process.env.PORT || 3000;
 
 app.listen(process.env.PORT, () => console.log(`Server is running on port ${PORT}`));
